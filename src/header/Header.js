@@ -9,7 +9,7 @@ import {
   Image,
 } from 'react-native';
 
-import { ViewPropTypes, getStatusBarHeight, withTheme } from '../config';
+import { ViewPropTypes, withTheme } from '../config';
 import { renderNode, nodeType } from '../helpers';
 
 import Text from '../text/Text';
@@ -172,15 +172,13 @@ const styles = {
     borderBottomWidth: StyleSheet.hairlineWidth,
     paddingHorizontal: 10,
     backgroundColor: theme.colors.primary,
-    paddingTop: getStatusBarHeight(),
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    height:
-      Platform.select({
-        android: 56,
-        default: 44,
-      }) + getStatusBarHeight(),
+    height: Platform.select({
+      android: 56,
+      default: 44,
+    }),
   }),
   centerContainer: {
     flex: 3,
